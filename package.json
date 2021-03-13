@@ -16,7 +16,8 @@
     "prod": "npm-run-all --parallel server:app server:api",
     "postbuild": "npm run copy:server-windows",
     "copy:server-linux": "cp server.js auth_config.json ./dist/login-demo",
-    "copy:server-windows": "copy server.js dist\\login-demo\\ && copy auth_config.json dist\\login-demo\\"
+    "copy:server-windows": "copy server.js dist\\login-demo\\ && copy auth_config.json dist\\login-demo\\",
+    "heroku-postbuild": "ng build && npm run copy:server-linux"
   },
   "private": true,
   "dependencies": {
