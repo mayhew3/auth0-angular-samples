@@ -1,14 +1,13 @@
-import { domain, clientId, audience, apiUri } from '../../auth_config.json';
-
 export const environment = {
-  production: true,
+  production: false,
   auth: {
-    domain,
-    clientId,
-    audience,
+    domain: 'mayhew3.auth0.com',
+    clientId: 'Q07Hxq11tkSKubyJ8yaXWMHfc4llMkag',
+    audience: 'https://uncharted-insights.herokuapp.com',
     redirectUri: window.location.origin,
   },
   httpInterceptor: {
-    allowedList: [`${apiUri}/*`],
+    allowedList: ['/api/*'],
   },
 };
+
