@@ -2,7 +2,6 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const { join } = require('path');
-const authConfig = require('./auth_config.json');
 
 const app = express();
 
@@ -16,7 +15,7 @@ app.use(
       // reportOnly: true,
       directives: {
         'default-src': ["'self'"],
-        'connect-src': ["'self'", 'https://*.auth0.com', authConfig.apiUri],
+        'connect-src': ["'self'", 'https://*.auth0.com', 'localhost:3000'],
         'frame-src': ["'self'", 'https://*.auth0.com'],
         'base-uri': ["'self'"],
         'block-all-mixed-content': [],
